@@ -1,35 +1,45 @@
 @use 'variaveis';
 
-.shows{
+.shows {
     padding: 2vw 5.6vw;
     min-height: 50vw;
-    &__list{
+
+    &__list {
         margin-top: 44px;
         display: none;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
 
-        &--is-active{
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &--is-active {
             display: grid;
         }
 
-        &__item{
-            img{
+        &__item {
+            img {
                 max-width: 100%;
                 border-radius: 4px;
             }
         }
     }
 
-    &__tabs{
+    &__tabs {
         display: flex;
         justify-content: center;
 
-        &__button{
-            color: variaveis.$corTextoSecundaria;
+        @media (max-width: 768px) {
+            white-space: nowrap;
+            overflow-x: scroll;
+            padding-left: 20px;
+        }
+
+        &__button {
+            color: variaveis.$corTextoSecundario;
             font-size: 20px;
             border: none;
-            
             padding-bottom: 5px;
             background: none;
             text-transform: uppercase;
@@ -37,8 +47,12 @@
             cursor: pointer;
             border-bottom: 5px solid transparent;
 
-            &--is-active{
-                border-color:variaveis.$corTextoSecundaria;
+            &--is-active {
+                border-color: variaveis.$corTextoSecundario;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 16px;
             }
         }
     }
